@@ -1,0 +1,17 @@
+hero{
+    background-image: url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    color: rgb(19, 57, 226);
+    text-align: center;
+    padding-top: 150px;
+}
+
+.hero button{
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}

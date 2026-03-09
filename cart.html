@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart</title>
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+text-align:center;
+}
+
+table{
+margin:auto;
+width:60%;
+background:white;
+border-collapse:collapse;
+}
+
+th,td{
+padding:10px;
+border:1px solid #ddd;
+}
+
+button{
+padding:10px 15px;
+background:green;
+color:white;
+border:none;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Your Cart</h1>
+
+<table id="cartTable">
+<tr>
+<th>Product</th>
+<th>Price</th>
+</tr>
+</table>
+
+<h2 id="total"></h2>
+
+<br>
+
+<a href="payment.html">
+<button>Proceed to Payment</button>
+</a>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let table = document.getElementById("cartTable");
+
+let total = 0;
+
+cart.forEach(item => {
+
+let row = table.insertRow();
+
+row.insertCell(0).innerText = item.name;
+row.insertCell(1).innerText = "₹" + item.price;
+
+total += item.price;
+
+});
+
+document.getElementById("total").innerText = "Total: ₹" + total;
+
+localStorage.setItem("totalPrice", total);
+
+</script>
+
+</body>
+</html>
